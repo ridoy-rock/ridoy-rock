@@ -18,7 +18,7 @@ export function SiteFooter() {
             <CalendarIcon className="size-5" />
           </span>
           <div className="min-w-0">
-            <h2 className="font-display text-base font-semibold text-ink">Calendar access</h2>
+            <h2 className="font-display text-base font-medium text-ink">Calendar access</h2>
             <p className="mt-1.5 max-w-3xl text-sm leading-relaxed text-muted">
               When a business connects Google Calendar or Outlook, H2M AI CRM reads only free/busy times and creates, updates or removes the appointment events it books. It does not read other events or use calendar data for advertising or AI training. See our{" "}
               <a href={appLink("/privacy")} className="font-medium text-brand-600 underline underline-offset-2 hover:text-brand-700">Privacy Policy</a>.
