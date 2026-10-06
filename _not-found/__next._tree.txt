@@ -1,0 +1,2 @@
+:HL["/ridoy-rock/_next/static/chunks/2ryu8-3or1d91.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"ys6G4_1DpTfEmXF8HyZII"}
