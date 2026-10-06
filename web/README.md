@@ -36,6 +36,22 @@ npm run build   # static export to out/
 - `public/brand/` — logo (light and dark), `app/icon.svg` — favicon
 - `public/landing/*.jpg` — app screenshots, the same files as on the live site
 
+## Deploy (GitHub Pages)
+
+Live: https://ridoy-rock.github.io/ridoy-rock/ (served from the `gh-pages` branch).
+
+```sh
+./scripts/deploy-pages.sh   # builds with the /ridoy-rock base path and pushes the result to gh-pages
+```
+
+If a deploy doesn't show up after a few minutes, check the "pages build and deployment" run under
+the repository's Actions tab; a run stuck in "waiting" can be cancelled and the script run again.
+
+## Open question
+
+The "And much more" cards show an ↗ arrow like Hostinger's, but they don't link anywhere yet.
+Decide where they should go (e.g. the pricing page) or remove the arrows.
+
 ## Porting into the app
 
 Copy `components/landing/`, the `@theme` block from `app/globals.css` and the files in `public/brand/`.
