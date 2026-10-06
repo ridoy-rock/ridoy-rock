@@ -1,4 +1,6 @@
-import { ArrowRightIcon, CalendarIcon, ChatIcon, CheckCircleIcon, LockIcon, PhoneIcon, SparkleIcon } from "./icons";
+import { AppWindow } from "./AppWindow";
+import { GlassPill, PrimaryPill } from "./Buttons";
+import { CalendarIcon, ChatIcon, CheckCircleIcon, PhoneIcon, SparkleIcon } from "./icons";
 import { VoiceWaves } from "./VoiceWaves";
 
 const delay = (ms: number) => ({ animationDelay: `${ms}ms` });
@@ -34,17 +36,8 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-3 motion-safe:animate-fade-up sm:flex-row" style={delay(240)}>
-          <a href="/login"
-            className="group inline-flex w-full max-w-xs items-center justify-between gap-3 rounded-full sm:w-auto sm:max-w-none sm:justify-start bg-white py-2 pl-7 pr-2 text-base font-bold text-ink shadow-[0_12px_40px_-8px_rgba(123,102,255,0.75)] transition hover:shadow-[0_16px_50px_-8px_rgba(123,102,255,0.95)]">
-            Start free for 30 days
-            <span className="grid size-10 place-items-center rounded-full bg-brand-600 text-white transition-transform group-hover:translate-x-0.5">
-              <ArrowRightIcon className="size-4" />
-            </span>
-          </a>
-          <a href="/pricing"
-            className="inline-flex h-14 w-full max-w-xs items-center justify-center rounded-full border sm:w-auto sm:max-w-none border-white/20 bg-white/[0.06] px-7 text-base font-semibold text-white backdrop-blur-md transition hover:bg-white/[0.12]">
-            See pricing
-          </a>
+          <PrimaryPill href="/login">Start free for 30 days</PrimaryPill>
+          <GlassPill href="/pricing">See pricing</GlassPill>
         </div>
 
         <p className="mt-5 text-sm text-white/60 motion-safe:animate-fade-up" style={delay(300)}>
@@ -61,20 +54,8 @@ export function Hero() {
           <FloatingChip className="-left-16 top-[46%] motion-safe:animate-float [animation-delay:2.4s]"><CalendarIcon className="size-5" /></FloatingChip>
 
           <div className="rounded-[20px] bg-white/10 p-1.5 shadow-[0_30px_80px_-30px_rgba(17,12,41,0.45)] ring-1 ring-white/20 backdrop-blur-md sm:rounded-[28px] sm:p-2.5">
-            <div className="overflow-hidden rounded-[15px] bg-white ring-1 ring-black/5 sm:rounded-[20px]">
-              <div className="flex items-center gap-1.5 border-b border-black/5 bg-[#fbfbfe] px-3 py-2.5 sm:px-4 sm:py-3">
-                <span className="size-2.5 rounded-full bg-[#ff5f57] sm:size-3" />
-                <span className="size-2.5 rounded-full bg-[#febc2e] sm:size-3" />
-                <span className="size-2.5 rounded-full bg-[#28c840] sm:size-3" />
-                <span className="mx-auto inline-flex items-center gap-1.5 truncate rounded-full bg-brand-50 px-3 py-1 text-[11px] font-medium text-muted sm:px-4 sm:text-xs">
-                  <LockIcon className="size-3 text-brand-600" />
-                  app.h2m.marketing
-                </span>
-                <span className="w-[38px] sm:w-[46px]" />
-              </div>
-              <img src="/landing/calls.jpg" alt="Inbound calls answered by the AI with summaries"
-                width={1600} height={1000} fetchPriority="high" className="block h-auto w-[165%] max-w-none sm:w-full sm:max-w-full" />
-            </div>
+            <AppWindow src="/landing/calls.jpg" alt="Inbound calls answered by the AI with summaries" priority
+              className="rounded-[15px] sm:rounded-[20px]" />
           </div>
         </div>
       </div>

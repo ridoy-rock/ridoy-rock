@@ -4,7 +4,7 @@ Usage: python make_preview.py <out_dir> <dest.html>
 - inlines the compiled Tailwind CSS and its fonts (Inter Variable, Inter Display) as data: URIs
 - inlines the logo and screenshot as data: URIs
 - drops the Next.js runtime and re-creates the header behaviour in plain JS
-- points /login and /pricing at the live site so the buttons go somewhere
+- points site links (/login, /pricing, /privacy, /terms) at the live site so they go somewhere
 """
 import base64
 import re
@@ -36,14 +36,14 @@ def data_uri(path, mime):
     return f"data:{mime};base64," + base64.b64encode((out / path).read_bytes()).decode()
 
 
-for path, mime in (("brand/h2m-logo-dark.svg", "image/svg+xml"), ("brand/h2m-logo.svg", "image/svg+xml"),
-                   ("landing/calls.jpg", "image/jpeg")):
-    assert f'src="/{path}"' in body, path
-    body = body.replace(f'src="/{path}"', f'src="{data_uri(path, mime)}"')
+MIME = {".svg": "image/svg+xml", ".jpg": "image/jpeg", ".png": "image/png"}
+body = re.sub(r'src="/((?:landing|brand)/[^"]+)"',
+              lambda m: f'src="{data_uri(m.group(1), MIME[Path(m.group(1)).suffix])}"', body)
+assert 'src="/' not in body, "an image was not inlined"
 
-body = body.replace('href="/login"', 'href="https://app.h2m.marketing/login"')
-body = body.replace('href="/pricing"', 'href="https://app.h2m.marketing/pricing"')
+# Site-relative links (/login, /pricing, /privacy, ...) open the live site; the logo link stays on the page.
 body = body.replace('href="/"', 'href="#"')
+body = re.sub(r'href="/(?!/)', 'href="https://app.h2m.marketing/', body)
 
 script = r"""
 (() => {
