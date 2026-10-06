@@ -106,6 +106,25 @@ script = r"""
   }
 
   button.addEventListener("click", () => setOpen(!open));
+
+  document.querySelectorAll("[data-carousel]").forEach((root) => {
+    const track = root.querySelector("[data-carousel-track]");
+    const prev = root.querySelector("[data-carousel-prev]");
+    const next = root.querySelector("[data-carousel-next]");
+    const update = () => {
+      prev.disabled = track.scrollLeft < 8;
+      next.disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 8;
+    };
+    const step = (d) => {
+      const card = track.querySelector("li");
+      track.scrollBy({ left: d * (card.getBoundingClientRect().width + 16), behavior: "smooth" });
+    };
+    prev.addEventListener("click", () => step(-1));
+    next.addEventListener("click", () => step(1));
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
   window.addEventListener("scroll", render, { passive: true });
   window.addEventListener("resize", render);
   render();

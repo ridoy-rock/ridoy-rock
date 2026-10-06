@@ -225,3 +225,22 @@ export const PlusIcon = (p: IconProps) => (
     <line x1="5" y1="12" x2="19" y2="12" />
   </Icon>
 );
+
+export const ArrowUpRightIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <line x1="7" y1="17" x2="17" y2="7" />
+    <polyline points="7 7 17 7 17 17" />
+  </Icon>
+);
+
+export const ChevronLeftIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <polyline points="15 18 9 12 15 6" />
+  </Icon>
+);
+
+export const ChevronRightIcon = (p: IconProps) => (
+  <Icon {...p}>
+    <polyline points="9 18 15 12 9 6" />
+  </Icon>
+);
