@@ -44,7 +44,8 @@ export function SiteHeader() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${surface}`}>
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:h-[72px] sm:px-8">
+      <div className={`mx-auto flex max-w-7xl items-center justify-between px-5 transition-[height] duration-300 sm:px-8 ${
+        scrolled || open ? "h-16 sm:h-[72px]" : "h-20 sm:h-24"}`}>
         <a href={asset("/")} className="relative shrink-0" aria-label="H2M AI CRM">
           <img src={asset("/brand/h2m-logo-dark.svg")} alt="H2M AI CRM" width={258} height={48}
             className={`h-8 w-auto transition-opacity duration-300 sm:h-9 ${dark ? "opacity-100" : "opacity-0"}`} />

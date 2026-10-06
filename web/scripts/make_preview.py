@@ -56,6 +56,7 @@ script = r"""
   const menuIcon = button.innerHTML;
   const closeIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="size-5"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>';
   const LOGO = "h-8 w-auto transition-opacity duration-300 sm:h-9 ";
+  const bar = header.firstElementChild;
   let open = false;
   let panel = null;
 
@@ -67,6 +68,8 @@ script = r"""
       : !scrolled ? "bg-transparent"
       : dark ? "bg-brand-950/60 backdrop-blur-xl border-b border-white/10"
       : "bg-white/80 backdrop-blur-xl border-b border-black/5");
+    bar.className = "mx-auto flex max-w-7xl items-center justify-between px-5 transition-[height] duration-300 sm:px-8 " +
+      (scrolled || open ? "h-16 sm:h-[72px]" : "h-20 sm:h-24");
     logoDark.className = LOGO + (dark ? "opacity-100" : "opacity-0");
     logoLight.className = "absolute inset-0 " + LOGO + (dark ? "opacity-0" : "opacity-100");
     links.forEach((a) => {
