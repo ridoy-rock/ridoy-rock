@@ -1,7 +1,8 @@
-:HL["/ridoy-rock/_next/static/chunks/1y8g431yafhsq.css","style"]
+:HL["/ridoy-rock/_next/static/chunks/2wtwfcpedpf4k.css","style"]
 :HL["/ridoy-rock/_next/static/media/InterDisplay_Medium-s.p.0g6cht4ktizsh.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/ridoy-rock/_next/static/media/InterDisplay_Regular-s.p.05ofnfgo8nzb9.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/ridoy-rock/_next/static/media/InterDisplay_SemiBold-s.p.31mi2_1srxuqc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/ridoy-rock/_next/static/media/InterVariable-s.p.2c0y96ae70xfx.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/ridoy-rock/brand/h2m-mark.svg","image"]
 :HL["/ridoy-rock/landing/calls.jpg","image",{"fetchPriority":"high"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"Akp2_PdZ969iCl1Hz37bx"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"-5mPFubToQ8QO5arbCYOT"}
