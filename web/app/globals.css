@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand purple, from hostinger.com design tokens */
+  --color-brand-50: #f5f6ff;
+  --color-brand-100: #e6e8ff;
+  --color-brand-200: #d9dbff;
+  --color-brand-300: #bcbdff;
+  --color-brand-400: #9d99ff;
+  --color-brand-500: #7b66ff;
+  --color-brand-600: #673de6;
+  --color-brand-700: #471ea7;
+  --color-brand-800: #331c74;
+  --color-brand-900: #251951;
+  --color-brand-950: #110c29;
+
+  --color-ink: #18181a;
+  --color-muted: #58585e;
+
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-wave: wave 30s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes wave {
+    to {
+      transform: translateX(-1440px);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
