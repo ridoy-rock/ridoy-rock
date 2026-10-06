@@ -19,7 +19,7 @@ export function MoreFeatures() {
     <section className="px-2 sm:px-3">
       <div className="rounded-[28px] bg-brand-50 px-5 py-20 sm:rounded-[40px] sm:px-8 sm:py-28">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center font-display text-4xl font-extrabold tracking-[-0.03em] text-ink sm:text-5xl">And much more</h2>
+          <h2 className="text-center font-display text-4xl font-bold tracking-[-0.03em] text-ink sm:text-5xl">And much more</h2>
           <div className="mt-12 grid gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
             {ITEMS.map(({ title, text, Icon }) => (
               <div key={title}
@@ -27,7 +27,7 @@ export function MoreFeatures() {
                 <span className="grid size-11 place-items-center rounded-2xl bg-brand-50 text-brand-600 ring-1 ring-brand-100 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white group-hover:ring-brand-600">
                   <Icon className="size-5" />
                 </span>
-                <h3 className="mt-6 font-display text-lg font-bold tracking-[-0.01em] text-ink">{title}</h3>
+                <h3 className="mt-6 font-display text-lg font-semibold tracking-[-0.01em] text-ink">{title}</h3>
                 <p className="mt-2 text-[15px] leading-relaxed text-muted">{text}</p>
               </div>
             ))}

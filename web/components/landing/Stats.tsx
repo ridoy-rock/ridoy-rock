@@ -15,7 +15,7 @@ export function Stats() {
             <span className="grid size-11 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-[0_10px_24px_-8px_rgba(103,61,230,0.6)]">
               <Icon className="size-5" />
             </span>
-            <div className="mt-7 bg-gradient-to-br font-display from-brand-600 to-brand-800 bg-clip-text text-5xl font-extrabold tracking-[-0.035em] text-transparent sm:text-[56px] sm:leading-none">
+            <div className="mt-7 bg-gradient-to-br font-display from-brand-600 to-brand-800 bg-clip-text text-5xl font-bold tracking-[-0.035em] text-transparent sm:text-[56px] sm:leading-none">
               {value}
             </div>
             <p className="mt-3 max-w-[19rem] text-[15px] leading-relaxed text-muted">{label}</p>

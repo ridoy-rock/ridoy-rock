@@ -65,7 +65,7 @@ export function Features() {
     <section id="features" className="scroll-mt-20 px-5 py-24 sm:px-8 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-4xl font-extrabold tracking-[-0.03em] text-balance text-ink sm:text-5xl">
+          <h2 className="font-display text-4xl font-bold tracking-[-0.03em] text-balance text-ink sm:text-5xl">
             Everything a service business needs, in one app
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
@@ -83,7 +83,7 @@ export function Features() {
                   </span>
                   {f.eyebrow}
                 </span>
-                <h3 className="mt-5 font-display text-3xl font-extrabold tracking-[-0.03em] text-balance text-ink sm:text-4xl">{f.title}</h3>
+                <h3 className="mt-5 font-display text-3xl font-bold tracking-[-0.03em] text-balance text-ink sm:text-4xl">{f.title}</h3>
                 <p className="mt-4 text-lg leading-relaxed text-muted">{f.text}</p>
                 <ul className="mt-7 space-y-3">
                   {f.points.map((point) => (

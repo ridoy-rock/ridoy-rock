@@ -19,7 +19,7 @@ export function Pricing() {
     <section className="px-5 py-24 sm:px-8 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-4xl font-extrabold tracking-[-0.03em] text-ink sm:text-5xl">Simple monthly plans</h2>
+          <h2 className="font-display text-4xl font-bold tracking-[-0.03em] text-ink sm:text-5xl">Simple monthly plans</h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
             Start free for 30 days. Upgrade when the AI is bringing you work. Prices in USD; local prices on the pricing page.
           </p>
@@ -40,9 +40,9 @@ export function Pricing() {
                   </span>
                 </>
               )}
-              <h3 className="font-display text-lg font-bold">{plan.name}</h3>
+              <h3 className="font-display text-lg font-semibold">{plan.name}</h3>
               <div className="mt-4">
-                <span className="font-display text-4xl font-extrabold tracking-[-0.03em]">{"$" + plan.price}</span>
+                <span className="font-display text-4xl font-bold tracking-[-0.03em]">{"$" + plan.price}</span>
                 <span className={`text-sm ${plan.popular ? "text-white/60" : "text-muted"}`}>{plan.period}</span>
               </div>
               <p className={`mt-3 flex-1 text-sm leading-relaxed ${plan.popular ? "text-white/70" : "text-muted"}`}>{plan.text}</p>

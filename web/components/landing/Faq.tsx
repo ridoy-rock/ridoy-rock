@@ -31,7 +31,7 @@ export function Faq() {
   return (
     <section className="px-5 pb-24 sm:px-8 sm:pb-32">
       <div className="mx-auto max-w-3xl">
-        <h2 className="text-center font-display text-4xl font-extrabold tracking-[-0.03em] text-ink sm:text-5xl">Questions</h2>
+        <h2 className="text-center font-display text-4xl font-bold tracking-[-0.03em] text-ink sm:text-5xl">Questions</h2>
         <div className="mt-12 space-y-3">
           {FAQ.map(({ q, a }) => (
             // Sharing a name makes the browser keep only one answer open at a time.

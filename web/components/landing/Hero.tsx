@@ -11,9 +11,11 @@ export function Hero() {
     <section className="relative isolate overflow-hidden px-5 pb-14 pt-28 sm:px-8 sm:pb-20 sm:pt-40">
       {/* Dark purple panel; it stops partway down the screenshot so the app "rises" out of it. */}
       <div id="hero-backdrop" aria-hidden="true"
-        className="absolute inset-x-2 top-2 -z-10 h-[calc(100%-7rem)] overflow-hidden rounded-[28px] bg-brand-950 sm:inset-x-3 sm:top-3 sm:h-[calc(100%-15rem)] sm:rounded-[40px] lg:h-[calc(100%-21rem)]">
-        <div className="absolute inset-0 bg-[radial-gradient(70%_60%_at_50%_-5%,#7b66ff_0%,#673de6_28%,transparent_70%),radial-gradient(45%_45%_at_95%_35%,rgba(123,102,255,0.35),transparent_70%),radial-gradient(45%_50%_at_0%_70%,rgba(71,30,167,0.7),transparent_70%),linear-gradient(180deg,#1f1346_0%,#110c29_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(70%_60%_at_50%_30%,#000_20%,transparent_80%)]" />
+        className="absolute inset-x-2 top-2 -z-10 h-[calc(100%-7rem)] overflow-hidden rounded-[28px] bg-[#160d36] sm:inset-x-3 sm:top-3 sm:h-[calc(100%-15rem)] sm:rounded-[40px] lg:h-[calc(100%-21rem)]">
+        {/* Hostinger-style light: deep violet ground, glows in the corners, and a soft diagonal beam. */}
+        <div className="absolute inset-0 bg-[radial-gradient(42%_36%_at_100%_0%,rgba(86,50,192,0.95),transparent_70%),radial-gradient(45%_40%_at_10%_30%,rgba(60,30,140,0.9),transparent_70%),radial-gradient(65%_28%_at_70%_100%,rgba(63,34,139,0.85),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(195deg,transparent_26%,rgba(64,33,149,0.35)_36%,rgba(84,52,182,0.65)_46%,rgba(118,92,230,0.88)_55%,rgba(130,110,238,0.92)_60%,rgba(112,86,224,0.85)_66%,rgba(80,48,176,0.6)_75%,rgba(64,33,149,0.3)_84%,transparent_93%)] [mask-image:linear-gradient(90deg,rgba(0,0,0,0.35)_0%,rgba(0,0,0,0.75)_45%,#000_80%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(48%_32%_at_76%_68%,rgba(140,122,244,0.55),transparent_70%)]" />
         <VoiceWaves id="hero-waves" className="absolute inset-x-0 bottom-0 h-[30%] w-full opacity-90 sm:h-[50%]" />
       </div>
 
@@ -25,7 +27,7 @@ export function Hero() {
           AI phone receptionist + 24/7 live web chat + CRM
         </span>
 
-        <h1 className="mx-auto mt-7 max-w-5xl font-display text-[40px] font-extrabold leading-[1.04] tracking-[-0.032em] text-white motion-safe:animate-fade-up sm:text-6xl lg:text-[72px] lg:leading-[1.02]" style={delay(80)}>
+        <h1 className="mx-auto mt-7 max-w-5xl font-display text-[40px] font-bold leading-[1.04] tracking-[-0.032em] text-white motion-safe:animate-fade-up sm:text-6xl lg:text-[72px] lg:leading-[1.02]" style={delay(80)}>
           Never miss a lead again.{" "}
           <span className="bg-gradient-to-r from-brand-200 via-brand-300 to-brand-400 bg-clip-text text-transparent">
             Your AI answers every call and chat, books the job and follows up.

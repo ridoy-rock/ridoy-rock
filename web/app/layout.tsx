@@ -12,8 +12,8 @@ const interVariable = localFont({
 
 const interDisplay = localFont({
   src: [
+    { path: "./fonts/InterDisplay-SemiBold.woff2", weight: "600" },
     { path: "./fonts/InterDisplay-Bold.woff2", weight: "700" },
-    { path: "./fonts/InterDisplay-ExtraBold.woff2", weight: "800" },
   ],
   variable: "--font-inter-display",
   display: "swap",
