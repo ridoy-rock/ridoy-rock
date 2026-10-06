@@ -1,5 +1,6 @@
 import { GlassPill, PrimaryPill } from "./Buttons";
 import { VoiceWaves } from "./VoiceWaves";
+import { appLink } from "@/lib/paths";
 
 export function FinalCta() {
   return (
@@ -16,8 +17,8 @@ export function FinalCta() {
           Set up in minutes, test it from your browser, and go live when you are ready.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <PrimaryPill href="/login">Start free</PrimaryPill>
-          <GlassPill href="/pricing#contact">Talk to us</GlassPill>
+          <PrimaryPill href={appLink("/login")}>Start free</PrimaryPill>
+          <GlassPill href={appLink("/pricing#contact")}>Talk to us</GlassPill>
         </div>
       </div>
     </section>

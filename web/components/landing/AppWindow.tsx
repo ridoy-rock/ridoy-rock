@@ -1,4 +1,5 @@
 import { LockIcon } from "./icons";
+import { asset } from "@/lib/paths";
 
 type AppWindowProps = {
   src: string;
@@ -23,10 +24,10 @@ export function AppWindow({ src, alt, priority = false, className = "" }: AppWin
         <span className="w-[38px] sm:w-[46px]" />
       </div>
       {priority ? (
-        <img src={src} alt={alt} width={1600} height={1000} fetchPriority="high"
+        <img src={asset(src)} alt={alt} width={1600} height={1000} fetchPriority="high"
           className="block h-auto w-[165%] max-w-none sm:w-full sm:max-w-full" />
       ) : (
-        <img src={src} alt={alt} width={1600} height={1000} loading="lazy" className="block h-auto w-full" />
+        <img src={asset(src)} alt={alt} width={1600} height={1000} loading="lazy" className="block h-auto w-full" />
       )}
     </div>
   );

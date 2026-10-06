@@ -2,6 +2,7 @@ import { AppWindow } from "./AppWindow";
 import { GlassPill, PrimaryPill } from "./Buttons";
 import { CalendarIcon, ChatIcon, CheckCircleIcon, PhoneIcon, SparkleIcon } from "./icons";
 import { VoiceWaves } from "./VoiceWaves";
+import { appLink } from "@/lib/paths";
 
 const delay = (ms: number) => ({ animationDelay: `${ms}ms` });
 
@@ -36,8 +37,8 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-3 motion-safe:animate-fade-up sm:flex-row" style={delay(240)}>
-          <PrimaryPill href="/login">Start free for 30 days</PrimaryPill>
-          <GlassPill href="/pricing">See pricing</GlassPill>
+          <PrimaryPill href={appLink("/login")}>Start free for 30 days</PrimaryPill>
+          <GlassPill href={appLink("/pricing")}>See pricing</GlassPill>
         </div>
 
         <p className="mt-5 text-sm text-white/60 motion-safe:animate-fade-up" style={delay(300)}>

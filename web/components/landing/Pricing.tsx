@@ -1,4 +1,5 @@
 import { ArrowRightIcon, ChatIcon, ClockIcon, UsersIcon } from "./icons";
+import { appLink } from "@/lib/paths";
 
 type Plan = { name: string; price: string; period: string; text: string; items: [string, string, string]; popular?: boolean };
 
@@ -61,7 +62,7 @@ export function Pricing() {
         </div>
 
         <div className="mt-10 text-center">
-          <a href="/pricing" className="group inline-flex items-center gap-2 font-semibold text-brand-600 hover:text-brand-700">
+          <a href={appLink("/pricing")} className="group inline-flex items-center gap-2 font-semibold text-brand-600 hover:text-brand-700">
             Compare all plans and Enterprise
             <ArrowRightIcon className="size-4 transition-transform group-hover:translate-x-0.5" />
           </a>

@@ -1,9 +1,10 @@
 import { CalendarIcon } from "./icons";
+import { appLink, asset } from "@/lib/paths";
 
 const LINKS = [
-  { href: "/pricing", label: "Pricing" },
-  { href: "/privacy", label: "Privacy Policy" },
-  { href: "/terms", label: "Terms of Service" },
+  { href: appLink("/pricing"), label: "Pricing" },
+  { href: appLink("/privacy"), label: "Privacy Policy" },
+  { href: appLink("/terms"), label: "Terms of Service" },
   { href: "mailto:hellotomarketing99@gmail.com", label: "Contact" },
 ];
 
@@ -20,7 +21,7 @@ export function SiteFooter() {
             <h2 className="font-display text-base font-bold text-ink">Calendar access</h2>
             <p className="mt-1.5 max-w-3xl text-sm leading-relaxed text-muted">
               When a business connects Google Calendar or Outlook, H2M AI CRM reads only free/busy times and creates, updates or removes the appointment events it books. It does not read other events or use calendar data for advertising or AI training. See our{" "}
-              <a href="/privacy" className="font-medium text-brand-600 underline underline-offset-2 hover:text-brand-700">Privacy Policy</a>.
+              <a href={appLink("/privacy")} className="font-medium text-brand-600 underline underline-offset-2 hover:text-brand-700">Privacy Policy</a>.
             </p>
           </div>
         </div>
@@ -29,7 +30,7 @@ export function SiteFooter() {
       <footer className="border-t border-brand-100">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <div className="flex items-center gap-3">
-            <img src="/brand/h2m-mark.svg" alt="" aria-hidden="true" width={28} height={28} className="size-7" />
+            <img src={asset("/brand/h2m-mark.svg")} alt="" aria-hidden="true" width={28} height={28} className="size-7" />
             <span>© H2M AI CRM</span>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-2">

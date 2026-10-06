@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:pages": "PAGES_BASE_PATH=/ridoy-rock NEXT_PUBLIC_APP_ORIGIN=https://app.h2m.marketing next build"
   },
   "dependencies": {
     "next": "16.3.8",

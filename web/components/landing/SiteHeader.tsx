@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { CloseIcon, MenuIcon } from "./icons";
+import { appLink, asset } from "@/lib/paths";
 
 const LINKS = [
   { href: "#features", label: "Features" },
   { href: "#how", label: "How it works" },
-  { href: "/pricing", label: "Pricing" },
+  { href: appLink("/pricing"), label: "Pricing" },
 ];
 
 /** Element whose bottom edge marks where the dark hero ends. */
@@ -44,10 +45,10 @@ export function SiteHeader() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${surface}`}>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:h-[72px] sm:px-8">
-        <a href="/" className="relative shrink-0" aria-label="H2M AI CRM">
-          <img src="/brand/h2m-logo-dark.svg" alt="H2M AI CRM" width={258} height={48}
+        <a href={asset("/")} className="relative shrink-0" aria-label="H2M AI CRM">
+          <img src={asset("/brand/h2m-logo-dark.svg")} alt="H2M AI CRM" width={258} height={48}
             className={`h-8 w-auto transition-opacity duration-300 sm:h-9 ${dark ? "opacity-100" : "opacity-0"}`} />
-          <img src="/brand/h2m-logo.svg" alt="" aria-hidden="true" width={258} height={48}
+          <img src={asset("/brand/h2m-logo.svg")} alt="" aria-hidden="true" width={258} height={48}
             className={`absolute inset-0 h-8 w-auto transition-opacity duration-300 sm:h-9 ${dark ? "opacity-0" : "opacity-100"}`} />
         </a>
 
@@ -60,7 +61,7 @@ export function SiteHeader() {
               </a>
             ))}
           </div>
-          <a href="/login"
+          <a href={appLink("/login")}
             className={`ml-2 rounded-full px-5 py-2.5 text-[15px] font-semibold transition-colors ${dark ? "bg-white text-ink hover:bg-brand-100" : "bg-brand-600 text-white hover:bg-brand-700"}`}>
             Sign in
           </a>
