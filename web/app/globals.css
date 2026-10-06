@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter-variable), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter-display), var(--font-inter-variable), ui-sans-serif, system-ui, sans-serif;
 
   /* Brand purple, from hostinger.com design tokens */
   --color-brand-50: #f5f6ff;

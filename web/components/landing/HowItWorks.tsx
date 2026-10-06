@@ -27,7 +27,7 @@ export function HowItWorks() {
         <VoiceWaves id="how-waves" className="absolute inset-x-0 bottom-0 -z-10 h-56 w-full opacity-40" />
 
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-4xl font-extrabold tracking-[-0.03em] sm:text-5xl">Live in an afternoon</h2>
+          <h2 className="text-center font-display text-4xl font-extrabold tracking-[-0.03em] sm:text-5xl">Live in an afternoon</h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lg leading-relaxed text-white/65">
             No technical skills needed. We help you set up on Pro, Growth and Enterprise.
           </p>
@@ -44,7 +44,7 @@ export function HowItWorks() {
                     <Icon className="size-5" />
                   </span>
                 </div>
-                <h3 className="mt-8 text-xl font-bold tracking-[-0.01em]">{title}</h3>
+                <h3 className="mt-8 font-display text-xl font-bold tracking-[-0.01em]">{title}</h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-white/65">{text}</p>
               </li>
             ))}

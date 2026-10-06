@@ -22,7 +22,7 @@ export function Hero() {
           AI phone receptionist + 24/7 live web chat + CRM
         </span>
 
-        <h1 className="mx-auto mt-7 max-w-5xl text-[40px] font-extrabold leading-[1.04] tracking-[-0.032em] text-white motion-safe:animate-fade-up sm:text-6xl lg:text-[72px] lg:leading-[1.02]" style={delay(80)}>
+        <h1 className="mx-auto mt-7 max-w-5xl font-display text-[40px] font-extrabold leading-[1.04] tracking-[-0.032em] text-white motion-safe:animate-fade-up sm:text-6xl lg:text-[72px] lg:leading-[1.02]" style={delay(80)}>
           Never miss a lead again.{" "}
           <span className="bg-gradient-to-r from-brand-200 via-brand-300 to-brand-400 bg-clip-text text-transparent">
             Your AI answers every call and chat, books the job and follows up.

@@ -1,7 +1,7 @@
 """Turn the Next.js static export into one self-contained preview page for an Artifact.
 
 Usage: python make_preview.py <out_dir> <dest.html>
-- inlines the compiled Tailwind CSS (minus next/font @font-face rules; Inter comes from Google Fonts)
+- inlines the compiled Tailwind CSS and its fonts (Inter Variable, Inter Display) as data: URIs
 - inlines the logo and screenshot as data: URIs
 - drops the Next.js runtime and re-creates the header behaviour in plain JS
 - points /login and /pricing at the live site so the buttons go somewhere
@@ -21,8 +21,15 @@ body = re.sub(r"<script\b[^>]*/>", "", body)
 body = body.replace('<div hidden=""><!--$--><!--/$--></div>', "")
 
 css_href = re.search(r'<link rel="stylesheet" href="/(_next/static/chunks/[^"]+\.css)"', html).group(1)
-css = (out / css_href).read_text()
-css = re.sub(r"@font-face\{[^}]*url\([^}]*\}", "", css)
+css_path = out / css_href
+css = css_path.read_text()
+css = re.sub(r"url\(([^)]+?\.woff2)\)",
+             lambda m: "url(data:font/woff2;base64,"
+             + base64.b64encode((css_path.parent / m.group(1)).resolve().read_bytes()).decode() + ")", css)
+# next/font defines its font variables on classes set on <html>. The artifact supplies its own <html>,
+# so declare them on :root, where the theme's --font-sans / --font-display reference them.
+html_classes = re.search(r'<html[^>]*class="([^"]*)"', html).group(1).split()
+root_vars = "".join(re.search(r"\." + re.escape(c) + r"\{([^}]*)\}", css).group(1) + ";" for c in html_classes)
 
 
 def data_uri(path, mime):
@@ -103,16 +110,13 @@ script = r"""
 """
 
 page = f"""<title>H2M Landing Redesign</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap">
 <style>
 {css}
 </style>
 <style>
   /* Preview shell: one light page, as on the live site. */
-  :root {{ --font-inter: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif; color-scheme: light; }}
-  body {{ background: #ffffff; color: #18181a; font-size: 16px; font-family: var(--font-inter); }}
+  :root {{ color-scheme: light; {root_vars} }}
+  body {{ background: #ffffff; color: #18181a; font-size: 16px; }}
   header.fixed {{ padding-top: env(safe-area-inset-top, 0px); }}
   /* Show content at rest (no fade-in) so the first frame is complete. */
   .motion-safe\\:animate-fade-up {{ animation: none !important; }}

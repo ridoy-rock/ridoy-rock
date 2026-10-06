@@ -25,7 +25,7 @@ npm run build   # static export to out/
 ## Structure
 
 - `app/globals.css` — brand tokens (`brand-50` … `brand-950` from Hostinger's purple, `ink`, `muted`) and animations
-- `app/layout.tsx` — Inter (with optical sizing) via `next/font/google`, page title and description
+- `app/layout.tsx` — fonts (Inter Variable for text, Inter Display for titles; Inter 4.1 from rsms.me/inter, SIL OFL, files in `app/fonts/`), page title and description
 - `components/landing/SiteHeader.tsx` — sticky header: transparent on the hero, glass on scroll, mobile menu
 - `components/landing/Hero.tsx` — dark purple hero, voice-wave background, app preview
 - `components/landing/Channels.tsx`, `Stats.tsx`, `HowItWorks.tsx` — the following sections
